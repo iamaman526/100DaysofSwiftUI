@@ -10,7 +10,10 @@ This is a sample Swift code that demonstrates:
 - Type safety and conversion  
 - Storing decimal numbers
 
+ [Click here](DeepDive/StringMethods.md) to view detailed string methods in Swift.
+
 ```swift
+
 import Cocoa
 
 // Greeting
@@ -111,4 +114,4 @@ if let num = Int(numString) {
 
 
 
-
+- [📘 String Methods](String_Methods.md)
