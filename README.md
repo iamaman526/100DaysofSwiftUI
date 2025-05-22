@@ -1,6 +1,8 @@
-# Swift Code Example – Day 01
+# SWIFT LEARNING
+---
 
-This is a sample Swift code that demonstrates:
+
+# Swift Code Example – Day 01
 
 - Variable and constant usage  
 - String operations  
@@ -113,5 +115,71 @@ if let num = Int(numString) {
 
 
 
+```
+---
 
-- [📘 String Methods](String_Methods.md)
+# Swift Code Example - Day 02 
+
+ - Boolean values and operations
+ - String concatenation and interpolation
+ - Logical operators and toggling
+
+```swift
+ 
+## 🔷 BOOLEANS
+
+let filename = "paris.jpg"
+print(filename.hasSuffix(".jpg"))  
+// Checks if the filename ends with ".jpg" → true
+
+let no = 120
+print(no.isMultiple(of: 3))         
+print(120.isMultiple(of: 3))        
+// Checks if numbers are divisible by 3
+
+let goodDogs = true
+var gameOver = false
+print(gameOver)                     // false
+gameOver.toggle()                   // Flips the Boolean value
+print(gameOver)                     // true
+
+let isMultiple = 120.isMultiple(of: 3)
+// Stores the result of the check into a constant
+
+var isAuthenticated = false
+isAuthenticated = !isAuthenticated  // Negates the current value
+print(isAuthenticated)              // true
+
+
+## 🔷 STRING JOINING
+
+// Concatenation
+
+let fName = "Nicol"
+let lName = "as"
+
+let fullName = fName + " " + lName
+print(fullName)                     // "Nicol as"
+
+let luggagecode = "12" + "4" + "7" + "6" + "9"
+// Inefficient: Creates multiple temporary strings
+
+
+// String Interpolation
+
+let names = "tay"
+let age = 25
+let message = "Hello my name is \(names) and I am \(age) years old"
+print(message)
+// "Hello my name is tay and I am 25 years old"
+
+print("6 * 3 is \(6 * 3)")
+// Expressions can be evaluated inside interpolation
+
+// - Why Use Interpolation?
+// - Cleaner and more readable
+// - Allows mixing of different data types
+// - More efficient than string concatenation
+// - Can be used with variables, constants, and expressions
+// - Can be used with string literals and variables
+
