@@ -12,7 +12,9 @@
 - Type safety and conversion  
 - Storing decimal numbers
 
- [Click here](DeepDive/StringMethods.md) to view detailed string methods in Swift.
+ [Click here](DeepDive/StringMethods.md) to view detailed string methods in Swift. 
+
+
 
 ```swift
 
@@ -124,6 +126,8 @@ if let num = Int(numString) {
  - String concatenation and interpolation
  - Logical operators and toggling
 
+  [Click here 📌 Checkpoint - 01 ](DeepDive/CheckPoint1.swift)
+
 ```swift
  
 ## 🔷 BOOLEANS
@@ -183,4 +187,3 @@ print("6 * 3 is \(6 * 3)")
 // - Can be used with variables, constants, and expressions
 // - Can be used with string literals and variables
 
-[Click here](DeepDive/CheckPoint1.swift) CheckPoint - 01 in Swift.
