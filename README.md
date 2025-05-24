@@ -183,3 +183,4 @@ print("6 * 3 is \(6 * 3)")
 // - Can be used with variables, constants, and expressions
 // - Can be used with string literals and variables
 
+[Click here](DeepDive/CheckPoint1.swift) CheckPoint - 01 in Swift.
