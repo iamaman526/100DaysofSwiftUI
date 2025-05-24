@@ -1,4 +1,6 @@
-let celcius = 30.0;
+ //Day02
+
+let celcius = 30.0; 
 
 let Farenhiet = (celcius * 9 / 5) + 32
 
