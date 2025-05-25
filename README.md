@@ -187,3 +187,10 @@ print("6 * 3 is \(6 * 3)")
 // - Can be used with variables, constants, and expressions
 // - Can be used with string literals and variables
 
+
+
+```
+---
+
+# Swift Code Example - Day 02 
+
