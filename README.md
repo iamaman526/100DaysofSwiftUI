@@ -192,5 +192,87 @@ print("6 * 3 is \(6 * 3)")
 ```
 ---
 
-# Swift Code Example - Day 02 
+# Swift Code Example - Day 03 
+
+- Complex data types - Part 1
+- Arrays: Creation, Access, Modification
+- Array functions and behaviors
+- Common methods: append(), remove(), count, contains(), sorted(), reversed().
+
+[Click here](DeepDive/ArrayMethods.md) to view detailed Array methods in Swift. 
+
+```swift
+
+// MARK: - ARRAYS
+
+// Basic array with string elements
+var beers = ["Pilsner", "Stout", "Lager", "Porter"]
+beers.append("BroCode")
+
+// Integer and Double arrays
+let numbers = [1, 2, 3, 4, 5]
+let temperatures = [10.1, 12.3, 14.5, 16.7]
+
+// Accessing array elements
+let firstBeer = beers[0]
+let firstNumber = numbers[0]
+
+// Type safety: Uncommenting below line causes error (String + Int)
+// let invalidOperation = firstBeer + firstNumber
+
+// MARK: - Creating Empty Arrays
+
+// Using explicit type syntax
+var scores = Array<Int>()
+scores.append(100)
+scores.append(200)
+scores.append(300)
+print("Second score: \(scores[1])")  // 200
+
+// Using shorthand type syntax
+var albums = [String]()
+albums.append("Thriller")
+albums.append("Back in Black")
+albums.append("Sgt. Pepper's Lonely Hearts Club Band")
+
+// Type inference from initial value
+var channels = ["Ama"]
+// channels.append(3)  // ❌ Error: Cannot append Int to [String]
+print(channels)
+
+// MARK: - Array Properties and Methods
+
+print("Number of albums: \(albums.count)")
+
+// Modifying array contents
+var characters = ["Arya", "Jon", "Daenerys"]
+characters.append("Tyrion")
+characters.remove(at: 1)                // Removes "Jon"
+print("Characters: \(characters)")
+print("Contains 'Aman'? \(characters.contains("Aman"))")  // false
+
+characters.removeAll()                 // Empties the array
+
+// MARK: - Sorting and Reversing
+
+let cities = ["New York", "San Francisco", "Los Angeles"]
+
+// Alphabetical sort
+let sortedCities = cities.sorted()
+print("Sorted cities: \(sortedCities)")
+
+// Lazy reversed view (efficient, not a full copy)
+let reversedCities = cities.reversed()
+print("Reversed cities: \(Array(reversedCities))")
+
+/*
+ 🔸 Tip:
+ Swift’s `.reversed()` returns a lazy collection, meaning the original array isn’t changed or copied.
+ It's efficient because it just presents a reversed view of the data.
+ To get a regular array, use Array(reversedCollection).
+*/
+
+
+
+
 
