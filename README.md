@@ -194,6 +194,8 @@ print("6 * 3 is \(6 * 3)")
 
 # Swift Code Example - Day 03 
 
+## ARRAYS:
+
 - Complex data types - Part 1
 - Arrays: Creation, Access, Modification
 - Array functions and behaviors
@@ -272,7 +274,108 @@ print("Reversed cities: \(Array(reversedCities))")
  To get a regular array, use Array(reversedCollection).
 */
 
+```
+## MARK: - DICTIONARIES
+- Complex data types – Part 2
+- Dictionaries: Creation, Access, Modification
+- Dictionary methods: accessing with default, updating, removing, force unwrapping
+- Dictionaries are ideal for labeled data: Unlike arrays that use numeric indexes, dictionaries let you use meaningful keys like "name" or "location", which makes    your code easier to read and maintain.
+- Use default: values to prevent crashes: When accessing a key that might not exist, Swift lets you safely return a fallback value using dictionary[key, default: value]. This avoids runtime errors due to missing keys.
 
+```swift
 
+// ❌ Using array for structured data (not recommended)
+var employee = ["Aman", "SE", "Bengaluru"]
+print("Job Title: \(employee[1])")
+print("Location: \(employee[2])")
+print("Name: \(employee[0])")
 
+// ⚠️ Problem: Index-based access can become invalid after removals
+employee.remove(at: 1)
+// Now prints incorrect or crashes if index doesn't exist
+
+// ✅ Using a dictionary with key-value pairs
+let employee02 = [
+    "name": "Aman",
+    "job": "SE",
+    "location": "Bengaluru"
+]
+
+print("Employee Dictionary: \(employee02)")
+print("Location: \(employee02["location", default: "unknown"])")
+print("Job Title: \(employee02["job", default: "unknown"])")
+
+// MARK: - Accessing Unknown Keys Safely
+
+print("Email: \(employee02["email", default: "unknown"])")  // Key doesn't exist
+
+// MARK: - Boolean Dictionary Example
+
+let hasGraduates = [
+    "Eric": false,
+    "Maeve": true,
+    "Otis": false
+]
+
+print("Maeve Graduated? \(hasGraduates["Maeve", default: false])")
+print("Ruby Graduated? \(hasGraduates["Ruby", default: false])")  // fallback default
+
+// MARK: - Dictionary with Integer Keys
+
+let olympics = [
+    2012: "London",
+    2016: "Rio",
+    2021: "Tokyo"
+]
+
+print("2016 Olympics: \(olympics[2016, default: "Unknown"])")
+print("2024 Olympics: \(olympics[2024, default: "Unknown"])")  // Key not present
+
+// MARK: - Creating an Empty Dictionary
+
+var heights = [String: Int]()
+heights["Alice"] = 189
+heights["Bob"] = 199
+heights["Charlie"] = 170
+
+print("Alice's height: \(heights["Alice", default: 0])")
+print("Bob's height: \(heights["Bob", default: 0])")
+print("Charlie's height: \(heights["Charlie", default: 0])")
+print("David's height: \(heights["David", default: 0])")  // Key not found
+
+// MARK: - Overwriting Values
+
+var archEnemies = [String: String]()
+archEnemies["Batman"] = "Penguin"
+archEnemies["Ares"] = "Wonder Woman"
+archEnemies["Loki"] = "Thor"
+
+// Overwriting Batman's enemy
+archEnemies["Batman"] = "Joker"
+
+print("Batman's Enemy: \(archEnemies["Batman", default: "Unknown"])")
+
+// MARK: - Force Unwrapping (Use with Caution)
+
+print("Force Unwrap: \(heights["Alice"]!)")     // ✅ Works if key exists
+// print("Force Unwrap: \(heights["Zed"]!)")    // ❌ Crashes if key doesn't exist
+
+/*
+ 🔸 Tip:
+ Accessing values using just dict["key"] returns an optional (might be nil).
+ Use `default:` to safely fall back if key is missing.
+ Use `!` only if you are sure the key exists, or it may crash your app.
+*/
+
+// MARK: - Optional Safe Access Example
+
+let fruits = ["apple": 2, "banana": 3]
+
+if let value = fruits["banana"] {
+    print("Banana count: \(value)")
+} else {
+    print("Key not found.")
+}
+
+print("Orange count: \(fruits["orange", default: 0])")  // 0 fallback
 
