@@ -282,6 +282,8 @@ print("Reversed cities: \(Array(reversedCities))")
 - Dictionaries are ideal for labeled data: Unlike arrays that use numeric indexes, dictionaries let you use meaningful keys like "name" or "location", which makes    your code easier to read and maintain.
 - Use default: values to prevent crashes: When accessing a key that might not exist, Swift lets you safely return a fallback value using dictionary[key, default: value]. This avoids runtime errors due to missing keys.
 
+[Click here](DeepDive/Dictionaries.md) to view detailed Dictionaries  in Swift. 
+
 ```swift
 
 // ❌ Using array for structured data (not recommended)
