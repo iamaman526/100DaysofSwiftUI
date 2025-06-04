@@ -9,7 +9,7 @@ Use the links below to jump to each day's code and topics 👇
 
 - [📘 Day 01 – Basics: Variables, Strings, Numbers](#swift-code-example--day-01)
 - [📗 Day 02 – Booleans & Strings](#swift-code-example---day-02)
-- [📙 Day 03 – Arrays, Dictionaries, Sets](#swift-code-example---day-03)
+- [📙 Day 03 – Arrays, Dictionaries, Sets ,Enum](#swift-code-example---day-03)
 
 ---
 
@@ -407,7 +407,7 @@ Sets: Unique, Unordered Collections
 - Use cases: Ideal when uniqueness and performance matter more than order.
 
 ```swift
-// MARK: - SETS in Swift
+// SETS in Swift
 
 // ✅ How to use Sets for fast data lookup
 let actors = Set([
@@ -453,3 +453,62 @@ print(hogwarts.sorted())
 // - Use `.insert(_:)` to add items to a Set.
 // - `.insert(_:)` returns a **Bool**: `true` if item was added, `false` if it was a duplicate.
 // - Use `.append(_:)` only with Arrays (which are ordered).
+
+```
+
+## ENUM
+
+Enums (short for *enumerations*) are custom data types that restrict a variable to a **fixed set of possible values**. They prevent accidental assignment of invalid values and make your code more reliable and readable.
+
+### Why use enums?
+
+- Prevent typos like assigning `"January"` instead of a weekday.
+- Cleaner than using string or integer constants.
+
+```swift
+
+
+ //Problem Without Enums
+// Example with plain strings — prone to errors
+
+var selected = "Monday"
+selected = "Tuesday"
+selected = "January"   // 🚫 Error: Invalid value for a weekday
+selected = "Friday "    // 🚫 Trailing space causes bugs
+
+
+//Solution using Enum
+// Define a fixed set of allowed values
+enum Weekday {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+}
+
+// Using the enum
+var day = Weekday.monday
+day = Weekday.tuesday
+day = Weekday.friday
+
+
+//Cleaner Syntax Using Commas and Dot Shorthand in SWIFT
+
+// Comma-separated definition
+enum Weekday {
+    case monday, tuesday, wednesday, thursday, friday
+}
+
+// Dot syntax for assignment
+var day = Weekday.monday
+day = .tuesday
+day = .friday
+
+
+ /*Benefits of Using Enums in Swift
+-Prevents invalid assignments
+-Enables compiler checking
+-Improves code completion and readability*/
+
+```
