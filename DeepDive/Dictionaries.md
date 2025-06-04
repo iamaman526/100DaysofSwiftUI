@@ -8,6 +8,10 @@ Dictionaries are **key-value collections** in Swift — ideal for storing relate
 
 A **dictionary** stores **values (like strings, numbers)** with a **unique key** for each value.
 
+## 🧠 Why we use Dictionary?
+
+We can use any type of data as a key and any type of data as a value. We can create a dictionary using the (key:value) syntax. A key should always be a single item. But a value can be a single item or a collection of items, like an array or a dictionary.
+
 ```swift
 let employee = [
     "name": "Aman",
@@ -179,4 +183,6 @@ Not Found
 - Dictionaries in Swift are unordered collections. This means there is no guaranteed order for elements.
 
 > 🔗 Useful in almost all Swift projects, especially when working with data, APIs, and user settings.
+
+
 

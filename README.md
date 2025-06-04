@@ -382,3 +382,62 @@ if let value = fruits["banana"] {
 
 print("Orange count: \(fruits["orange", default: 0])")  // 0 fallback
 
+```
+## MARK: - SETS
+
+Sets: Unique, Unordered Collections
+
+- Sets store unique values: No duplicates allowed.
+- Unordered: Sets don’t preserve insertion order.
+- Fast lookups: .contains() is faster than in arrays.
+- Insert with .insert(): Returns false if item exists.
+- Sorted view: Use .sorted() to get a sorted array; the original set stays unordered.
+- Use cases: Ideal when uniqueness and performance matter more than order.
+
+```swift
+// MARK: - SETS in Swift
+
+// ✅ How to use Sets for fast data lookup
+let actors = Set([
+    "Tom Cruise",
+    "Angelina Jolie",
+    "Brad Pitt",
+    "Dwayne Johnson"
+])
+print(actors)
+
+
+// ✅ Declaring an empty Set and inserting values
+var hogwarts = Set<String>()
+hogwarts.insert("Harry Potter")
+hogwarts.insert("Hermione Granger")
+hogwarts.insert("Ron Weasley")
+hogwarts.insert("Draco Malfoy")
+
+print(hogwarts) 
+// ❗️Note: Set is unordered. Elements may appear in any order when printed.
+// Sets are optimized for fast lookups and storage.
+
+// ✅ Attempting to insert a duplicate value
+hogwarts.insert("Harry Potter") 
+// 🔁 Duplicate value is ignored. Set still contains unique values only.
+
+
+// ✅ Sorting a Set
+let sortedSet = hogwarts.sorted() 
+print(sortedSet) 
+// 🔍 .sorted() returns a new Array with sorted values
+// The original Set remains unordered.
+
+print(hogwarts.sorted())  
+// 🧾 This shows a sorted "view", but hogwarts itself is still a Set (unordered)
+
+
+// ℹ️ Notes on Sets:
+// - A Set stores **distinct** values of the same type.
+// - Use Sets when:
+//    - Order is not important.
+//    - You need to ensure **uniqueness** of elements.
+// - Use `.insert(_:)` to add items to a Set.
+// - `.insert(_:)` returns a **Bool**: `true` if item was added, `false` if it was a duplicate.
+// - Use `.append(_:)` only with Arrays (which are ordered).
