@@ -176,6 +176,7 @@ Not Found
 - Fast lookup using keys.
 - Safe to access using `default:` to avoid nil.
 - Type-safe and flexible.
+- Dictionaries in Swift are unordered collections. This means there is no guaranteed order for elements.
 
 > 🔗 Useful in almost all Swift projects, especially when working with data, APIs, and user settings.
 
