@@ -512,3 +512,96 @@ day = .friday
 -Improves code completion and readability*/
 
 ```
+---
+
+# Swift Code Example - Day 04 
+
+###  Type Annotations & Constants Without Initial Values
+---
+- Type annotations in Swift
+- Why and when to use type annotations
+- Explicit data types: `String`, `Int`, `Double`, `Bool`, `Array`, `Dictionary`, `Set`
+- Enum values and type inference
+- Constants declared without immediate assignment
+
+  [Click here 📌 Checkpoint - 02 ](DeepDive/CheckPoint2.swift)
+
+```swift
+
+
+## Type Annotations Basics
+
+
+// Sometimes we don’t want to assign a value immediately, or sometimes we want to override Swift’s choice of type, and that’s where type annotations come in.
+
+let sname = "Success"  // using type inference
+var digit = 5
+
+var digit1: Int = 5   // integer annotation
+let sname1: String = "Success" // string annotation
+
+var digit2 = 5
+print(digit2) // it will be an integer
+
+// For example, maybe score is a decimal because the user can get half points, so you’d write this:
+
+var digit3: Double = 5
+print(digit3) // overriding to be a double
+
+## Type Annotations in Various Data Types
+
+let playerName: String = "Roy"
+var luckyNumber: Int = 13
+let pi: Double = 3.141
+var is1Authenticated: Bool = true
+
+var albums: [String] = ["Red", "Fearless"]
+var user: [String: String] = ["id": "@twostraws"]
+var colorcode : [String: Int] = ["red":1,"blue":2]
+var books: Set<String> = Set(["The Bluest Eye", "Foundation", "Girl, Woman, Other"])
+var numbers: [Int] = [1, 2, 3, 4,]
+
+
+## Creating Empty Collections with Type Annotations
+
+// To create an empty array of strings:
+var teams: [String] = [String]()  // type annotation 1
+var cities1: [String] = []        // type annotation 2
+var clues = [String]()            // type inference
+
+
+##  Enums and Their Types
+
+// Values of an enum have the same type as the enum itself
+
+enum Shape {
+    case circle, square, triangle
+}
+
+var Shape1 = Shape.circle
+Shape1 = .square
+var shsape1: Shape = .circle   // multiple ways to write it
+
+
+
+
+## Constants Without Initial Values
+
+// Swift allows us to create constants without assigning a value immediately.
+// This is useful when we don’t know the value at first but will set it later.
+// Swift ensures you can’t use it before it’s set and prevents changing it once assigned—keeping it truly constant.
+
+let username: String
+// ... lot of codes between
+username = "twostraws"
+// ... more code
+print(username)
+
+// This kind of code requires a type annotation,
+// because without an initial value being assigned Swift doesn’t know what kind of data username will contain.
+
+ let score3: Int = "Zero" // ❌ This is not possible even by using type annotation
+
+
+
+
