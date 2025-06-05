@@ -10,6 +10,7 @@ Use the links below to jump to each day's code and topics 👇
 - [📘 Day 01 – Basics: Variables, Strings, Numbers](#swift-code-example--day-01)
 - [📗 Day 02 – Booleans & Strings](#swift-code-example---day-02)
 - [📙 Day 03 – Arrays, Dictionaries, Sets ,Enum](#swift-code-example---day-03)
+- [📙 Day 04 – Type Annotations , String Inference , Constants Without Initial Values](#Swift-Code-Example---Day-04)
 
 ---
 
