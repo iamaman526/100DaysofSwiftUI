@@ -617,6 +617,8 @@ print(username)
 - Comparing strings alphabetically
 - Using methods in conditions (`.count`, `.isEmpty`)
 - Using if blocks with arrays and strings
+- Use `else` when you want to handle the “otherwise” case of a condition.
+- Nested `if`, `else if`, logical operators (`&&`, `||`), and `enum`-based conditions
 
 ```swift
 
@@ -739,7 +741,114 @@ if username.isEmpty {
     username = "Anonymous"
 }
 
+-----------------------------------------------------------------------------------------------------------------------
+
+##  Using Multiple `if` Statements
+
+
+let age1 = 16
+
+if age1 >= 18 {
+    print("You can vote in the next election.")
+}
+
+if age1 < 18 {
+    print("Sorry, you're too young to vote.")
+}
+
+
+##  Using `else`
+
+We can simplify the above logic using `else`:
+
+
+let age2 = 16
+
+if age2 >= 18 {
+    print("You can vote in the next election.")
+} else {
+    print("Sorry, you're too young to vote.")
+}
+
+
+
+##  Using `else if` and a Final `else`
+
+we can chain multiple `else if` blocks, but there can only be **one** `else`.
+
+
+
+let a1 = false
+let b1 = true
+
+if a1 {
+    print("Code to run if a is true")
+} else if b1 {
+    print("Code to run if a is false but b is true")
+} else {
+    print("Code to run if both a and b are false")
+}
+
+
+##  Nested `if` Statements (Combining Conditions)
+
+
+let temp = 25
+
+if temp > 20 {
+    if temp < 30 {
+        print("It's a nice day.")
+    }
+}
+
+
+## Better Alternative: Use `&&` (Logical AND)
+
+
+if temp > 20 && temp < 30 {
+    print("It's a nice day.")
+}
+
+
+##  Using `||` (Logical OR)
+
+
+let userAge = 14
+let hasParentalConsent = true
+
+if userAge >= 18 || hasParentalConsent {
+    print("You can buy the game")
+}
+
+
+##  Conditional Logic with `enum` and `||` Operator
+
+
+enum TransportOption {
+    case airplane, helicopter, bicycle, car, scooter
+}
+
+let transport = TransportOption.airplane
+
+if transport == .airplane || transport == .helicopter {
+    print("Let's fly!")
+} else if transport == .bicycle {
+    print("I hope there's a bike path…")
+} else if transport == .car {
+    print("Time to get stuck in traffic.")
+} else {
+    print("I'm going to hire a scooter now!")
+}
+
+
+ 📝 Note:
+/* - When setting the value, we use `TransportOption.airplane` to indicate the enum type explicitly.
+- After initialization, Swift knows the type — so we can use `.airplane`, `.car`, etc.
+- `||` checks if `transport` is `.airplane` **or** `.helicopter`.
+- The rest is handled by `else if` and a final `else`. */
+
 ```
+
 
 
 
