@@ -607,15 +607,17 @@ print(username)
 ---
 # Swift Code Example - Day 05 
 
-###  Conditionals 
----
-- 
-- 
-- 
-- 
-- 
+##  Conditionals - If, switch, and the ternary operator
 
-## If statements in swift :
+
+### ->   If statement and Multiple if-else swift :
+
+- Making decisions in code using `if` statements
+- Comparison operators (`>`, `<`, `>=`, `<=`, `==`, `!=`)
+- Comparing strings alphabetically
+- Using methods in conditions (`.count`, `.isEmpty`)
+- Using if blocks with arrays and strings
+
 ```swift
 
 In programming, we often need to make decisions — like choosing different actions based on user input, data values, or app state. This is where conditionals come in. They allow your code to ask questions and execute different blocks of code depending on the answers.
@@ -737,6 +739,7 @@ if username.isEmpty {
     username = "Anonymous"
 }
 
+```
 
 
 
