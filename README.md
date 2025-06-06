@@ -603,6 +603,148 @@ print(username)
 
  let score3: Int = "Zero" // ❌ This is not possible even by using type annotation
 
+```
+---
+# Swift Code Example - Day 05 
+
+###  Conditionals 
+---
+- 
+- 
+- 
+- 
+- 
+
+## If statements in swift :
+```swift
+
+In programming, we often need to make decisions — like choosing different actions based on user input, data values, or app state. This is where conditionals come in. They allow your code to ask questions and execute different blocks of code depending on the answers.
+
+For example, imagine an app that checks the weather:
+If it’s raining, show an umbrella icon. Otherwise, show sunglasses.
+
+An if statement checks a condition — something that results in true or false. If the condition is true, the code inside the block runs.
+
+if someCondition {
+    print("Do something")
+    print("Do something else")
+}
+
+//example
+let temperature = 30
+
+if temperature > 25 {
+    print("It's a hot day!")
+}
+
+
+//Example using muliple ifs
+
+let speed = 88
+let percentage = 85
+let age = 18
+
+if speed >= 88 {
+    print("Where we're going we don't need roads.")  
+}
+
+if percentage < 85 {
+    print("Sorry, you failed the test.")
+}
+
+if age >= 18 {
+    print("You're eligible to vote")
+}
+
+//Example using camparison operator (<,>.<=,=>) with strings too
+
+let ourName = "Dave Lister"
+let friendName = "Arnold Rimmer"
+
+if ourName < friendName {
+    print("It's \(ourName) vs \(friendName)")
+}
+
+if ourName > friendName {
+    print("It's \(friendName) vs \(ourName)")
+}
+
+So, if the string inside ourName comes before the string inside friendName when sorted alphabetically, it prints ourName first then friendName, exactly as we wanted.
+
+
+//Example using Methods in Conditions
+
+// Make an array of 3 numbers
+var numbers = [1, 2, 3]
+
+// Add a 4th
+numbers.append(4)
+
+// If we have over 3 items
+if numbers.count > 3 {
+    // Remove the oldest number
+    numbers.remove(at: 0)
+}
+
+// Display the result
+print(numbers)
+
+
+//Example using ==(equal to) and !=(not equal to operator in the if condition
+
+let country = "Canada"
+let name = "Taylor Swift"
+
+if country == "Australia" {
+    print("G'day!")
+}
+
+if name != "Anonymous" {
+    print("Welcome, \(name)")
+}
+
+
+//Example of checking if the string is empty or not .
+
+// Create the username variable
+var username = "taylorswift13"
+
+// If `username` contains an empty string
+if username == "" {
+    // Make it equal to "Anonymous"
+    username = "Anonymous"
+}
+
+// Now print a welcome message
+print("Welcome, \(username)!")
+
+Note - We can check if a string is empty using .count, but this is not the most optimized approach because Swift counts each character individually, which can be inefficient for long strings. A better way is to use the .isEmpty property, which directly checks if the string has zero characters.
+
+Example using .count:
+if username.count == 0 {
+    username = "Anonymous"
+}
+
+optimized example using .isEmpty:
+
+if username.isEmpty == true {
+    username = "Anonymous"
+}
+
+** rewriting this , because In our case, username.isEmpty is already a Boolean — it directly returns true if the string is empty, and false otherwise. This means we don’t need to compare it to true or false. We can write the condition more simply and clearly:
+
+if username.isEmpty {
+    username = "Anonymous"
+}
+
+
+
+
+
+
+
+
+
 
 
 
