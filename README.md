@@ -846,6 +846,7 @@ if transport == .airplane || transport == .helicopter {
 - After initialization, Swift knows the type — so we can use `.airplane`, `.car`, etc.
 - `||` checks if `transport` is `.airplane` **or** `.helicopter`.
 - The rest is handled by `else if` and a final `else`. */
+-
 
 ```
 
