@@ -846,12 +846,159 @@ if transport == .airplane || transport == .helicopter {
 - After initialization, Swift knows the type — so we can use `.airplane`, `.car`, etc.
 - `||` checks if `transport` is `.airplane` **or** `.helicopter`.
 - The rest is handled by `else if` and a final `else`. */
--
 
 ```
-https://drive.google.com/drive/folders/17MROMmoSdRaW6wVilEKaNji8CGzFRIFG?usp=sharing
+
+## SWITCH STATEMENT
+
+The switch statement in Swift is a powerful alternative to multiple if-else blocks, especially useful for checking a single value against many possibilities like enums or strings.
+
+### Why use Switch?
+
+- Cleaner than repeating if for the same variable
+- Ideal for enum types — enforces handling all cases
+- Use default for unmatched values
+- Add fallthrough to continue to next case
+- Prefer switch for simple checks, if for complex conditions
+
+```swift
+// ------------------------------------------------------
+// MARK: - Using if-else statements
+// ------------------------------------------------------
+
+print("if-else ----------------")
+
+enum Weather {
+    case sun, rain, wind, snow, unknown
+}
+
+let forecast = Weather.sun
+
+if forecast == .rain {
+    print("Don't forget your umbrella!")
+} else if forecast == .sun {
+    print("It should be a nice day.")
+} else if forecast == .wind {
+    print("Stay safe out there!")
+} else if forecast == .snow {
+    print("School is cancelled.")
+} else {
+    print("Our forecast generator is broken!")
+}
+
+// ------------------------------------------------------
+// MARK: - Using switch statements
+// ------------------------------------------------------
+
+print("switch ----------------")
+
+// We solve the above problem using switch for clarity and avoiding repetition
+
+switch forecast {
+case .sun:
+    print("It should be a nice day.")
+case .rain:
+    print("Pack an umbrella.")
+case .wind:
+    print("Wear something warm.")
+case .snow:
+    print("School is cancelled.")
+case .unknown:
+    print("Our forecast generator is broken!")
+}
+
+// Explanation:
+// - switch forecast: tells Swift which value to evaluate.
+// - .sun, .rain etc.: cases matched against forecast.
+// - Every enum case must be handled (exhaustive).
+// - Cleaner than multiple if-else for fixed values.
 
 
+// ------------------------------------------------------
+// MARK: - Using switch with String and default
+// ------------------------------------------------------
+
+let place = "Metropolis"
+
+switch place {
+case "Gotham":
+    print("You're Batman!")
+case "Mega-City One":
+    print("You're Judge Dredd!")
+case "Wakanda":
+    print("You're Black Panther!")
+default:
+    print("Who are you?")
+}
+
+// Note:
+// - switch checks cases in order.
+// - default handles unmatched cases.
+// - Placing default before other cases causes compile error.
+
+
+// ------------------------------------------------------
+// MARK: - Using switch without fallthrough
+// ------------------------------------------------------
+
+let day1 = 5
+print("My true love gave to me…")
+
+switch day1 {
+case 5:
+    print("5 golden rings")
+case 4:
+    print("4 calling birds")
+case 3:
+    print("3 French hens")
+case 2:
+    print("2 turtle doves")
+default:
+    print("A partridge in a pear tree")
+}
+
+// ------------------------------------------------------
+// MARK: - Using switch with fallthrough
+// ------------------------------------------------------
+
+let day2 = 5
+print("My true love gave to me…")
+
+switch day2 {
+case 5:
+    print("5 golden rings")
+    fallthrough
+case 4:
+    print("4 calling birds")
+    fallthrough
+case 3:
+    print("3 French hens")
+    fallthrough
+case 2:
+    print("2 turtle doves")
+    fallthrough
+default:
+    print("A partridge in a pear tree")
+}
+
+// Explanation:
+// - fallthrough makes switch continue to the next case.
+// - Not commonly used, but useful for cumulative actions.
+
+
+// ------------------------------------------------------
+// MARK: - When to use switch over if?
+// ------------------------------------------------------
+
+// ✅ Use `switch` when:
+// - You are checking the same value against multiple possibilities (especially enums).
+// - You want exhaustive and safer checks.
+// - Readability and cleaner branching are needed.
+
+// ✅ Use `if` when:
+// - You have complex conditions (ranges, combinations).
+// - You're comparing different values or need logical operators (&&, ||).
+```
 
 
 
