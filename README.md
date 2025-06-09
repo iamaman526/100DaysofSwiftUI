@@ -1000,6 +1000,54 @@ default:
 // - You're comparing different values or need logical operators (&&, ||).
 ```
 
+## Ternary Operator (`? :`)
+
+The ternary operator is a concise way to evaluate a condition and choose between two values. It replaces simple `if-else` statements for assignment or expressions.
+
+- Works with 3 parts: `condition ? trueResult : falseResult`  
+- Ideal for short, inline condition-based choices  
+- Improves readability for simple logic  
+- Not suitable for complex conditions or multiple outcomes
+
+
+
+### Basic Syntax
+
+```swift
+let result = condition ? valueIfTrue : valueIfFalse
+
+// Example 1: Voting Eligibility
+
+let age = 18
+let canVote = age >= 18 ? "Yes" : "No"
+print(canVote)
+
+ // Example 2: Check if Array is Empty
+
+ let arr = [1, 2, 3, 4, 5]
+
+let newArr = arr.isEmpty ? "no one" : "\(arr.count) people"
+print(newArr)
+
+// Example 3: Enum Comparison
+
+enum Theme {
+    case light, dark
+}
+
+let theme = Theme.dark
+
+let background = theme == .light ? "black" : "white"
+print(background)
+
+//  Example 4: With Boolean
+
+let isAuthenticated = true
+print(isAuthenticated ? "Welcome!" : "Who are you?")
+
+```
+
+
 
 
 
