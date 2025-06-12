@@ -1050,7 +1050,196 @@ let isAuthenticated = true
 print(isAuthenticated ? "Welcome!" : "Who are you?")
 
 ```
+---
+# Swift Code Example - Day 06
 
+- Looping over arrays and ranges and  Nested loops 
+- Using `_` when loop variable is unused
+- Range operators: `..<` vs `...`
+- While loops with conditions and random values
+- `continue` and `break` in loops
+- Labeled statements for nested loop control
+
+[Click here 📌 Checkpoint - 03](DeepDive/CheckPoint3.swift)
+
+## 🔷 Looping Over Arrays
+
+```swift
+let platform = ["ios", "macos", "tvOS", "watchOS"]
+
+for item in platform {
+    print("Swift works great on \(item).")
+}
+
+//  Simple Range Loops
+
+for i in 1...5 {
+    print("5 x \(i) = \(5*i)")  // 1...5 is range
+}
+
+
+// Nested loops – Times table
+
+for j in 1...12 {
+    print("The \(j) times table")
+    for k in 1...12 {
+        print("  \(k) x \(j) is \(k * j)")
+    }
+    print()
+}
+
+// Closed vs Half-open ranges
+
+for i in 1...5 {
+    print("Counting from 1 through 5: \(i)")
+}
+
+for i in 1..<5 {
+    print("Counting from 1 up to 5: \(i)")
+}
+
+// note - ..< excludes the upper value — useful in arrays where count starts at 0.
+
+// Using _ when variable is unused
+
+var lyrics = "The Swift language is"
+
+for _ in 1...5 {
+    lyrics += " is great!"
+}
+print(lyrics)
+
+// Another underscore loop (names hidden)
+
+let names = ["Sterling", "Cyril", "Lana", "Ray", "Pam"]
+
+for _ in names {
+    print("[CENSORED] is a secret agent!")
+}
+// note - _ tells Swift not to create a temp constant. Also makes intent clear.
+
+
+
+// Array range slicing
+
+let names = ["Piper", "Alex", "Suzanne", "Gloria"]
+
+print(names[0])         // First item
+print(names[0..<4])     // Items 0 to 3  
+print(names[1...3])     // Items 1 to 3
+print(names[1...])      // From index 1 to end
+<!-- Swift allows partial ranges like 1... and ..<4. -->
+
+
+// Invalid vs Valid List Loop
+
+// ❌ Invalid:
+/// for beatle in "John", "Paul", "Ringo" { ... }
+
+for beatle in ["John", "Paul", "Ringo"] {
+    print("\(beatle) was in the Beatles")
+}
+//note - Always loop over arrays — not over comma-separated lists.
+
+```
+---
+
+## 🔷 While Loop
+
+```swift
+
+var count = 1
+
+while count <= 5 {
+    print("Counting: \(count)")
+    count += 1
+}
+
+// note - while loops are less common in Swift than for loops.
+
+//Example 
+
+var count2 = 10
+
+while count2 > 0 {
+    print("Counting: \(count2)")
+    count2 -= 1
+}
+print("Blast off")
+
+// note - //while loops are really useful when you just don’t know how many times the loop will go around.
+
+
+// Random Numbers with While --------------------->
+
+let id = Int.random(in: 1...1000)
+print(id)
+
+let amount = Double.random(in: 1...1000)
+print(amount)
+```
+---
+
+## 🔷 Continue and Break
+
+```swift
+
+// Skipping Loop Items Using continue
+
+let filenames = ["me.jpg", "work.txt", "sophie.jpg", "logo.psd"]
+
+for filename in filenames {
+    if filename.hasSuffix(".jpg") == false {
+        continue
+    }
+
+    print("Found picture: \(filename)")
+}
+//note - continue skips the rest of the loop if condition is met.
+
+
+// Using break to Exit Loop Early
+
+let num1 = 4
+let num2 = 14
+var multiples = [Int]()
+
+for i in 1...100_000 {
+    if i.isMultiple(of: num1) && i.isMultiple(of: num2) {
+        multiples.append(i)
+        if multiples.count == 10 {
+            break
+        }
+    }
+}
+print(multiples)
+//note - break exits the loop early when condition is met.
+
+
+// Labeled statement – breaking nested loops --------------------------------------
+
+let options = ["up", "down", "left", "right"]
+let secretCombination = ["up", "up", "right"]
+
+outerLoop: for option1 in options {
+    for option2 in options {
+        for option3 in options {
+            let attempt = [option1, option2, option3]
+            print("In loop")
+
+            if attempt == secretCombination {
+                print("The combination is \(attempt)!")
+                break outerLoop
+            }
+        }
+    }
+}
+
+//note :
+// Swift has labeled statements to help break out of nested loops or switch cases clearly.
+// Without labels, 'break' or 'continue' only affects the innermost loop.
+// Labels let you control exactly which loop you want to exit or skip — useful in complex logic.
+```
 
 
 
